@@ -6,7 +6,7 @@ module.exports = {
         const { text } = req.body;
         try {
             const newTodo = await Todo.create({
-                text,
+                text, userId
             });
             res.json(newTodo);
         } catch (e) {
@@ -15,7 +15,7 @@ module.exports = {
     },
     getAllTodos: async (req, res) => {
         try { 
-            const todos = await Todo.find();
+            const todos = await Todo.find().populate('userId');
             res.json(todos);
         } catch (e) {
             res.json(e);
