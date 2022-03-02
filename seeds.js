@@ -46,6 +46,38 @@ const seedDb = async () => {
 
     const users = await User.insertMany(usersToCreate);
 
+    const todosToCreate = [
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+        {
+            test: faker.random.word(),
+            userId: users[Math.floor(Math.random() * users.length)]._id,
+        },
+    ]
+    const users = await User.insertMany(usersToCreate);
+
     process.exit(0);
 };
 
